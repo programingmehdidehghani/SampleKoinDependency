@@ -21,6 +21,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             SampleKoinDependencyTheme {
                 val viewModel = getViewModel<MainViewModel>()
+                viewModel.doNetworkCall()
             }
         }
     }
