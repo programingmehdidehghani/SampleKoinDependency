@@ -2,10 +2,9 @@ package com.example.samplekoindependency
 
 import androidx.lifecycle.ViewModel
 
-class MainViewModel : ViewModel() {
-
-    private val repository = MainRepositoryImpl()
-
+class MainViewModel constructor(private val repository: MainRepositoryImpl) :
+    ViewModel() {
+    
     fun doNetworkCall(){
         repository.doNetworkCall()
     }

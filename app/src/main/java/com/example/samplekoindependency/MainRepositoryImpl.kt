@@ -1,4 +1,7 @@
 package com.example.samplekoindependency
 
-class MainRepositoryImpl {
+class MainRepositoryImpl : MainRepository {
+    override fun doNetworkCall() {
+        TODO("Not yet implemented")
+    }
 }
