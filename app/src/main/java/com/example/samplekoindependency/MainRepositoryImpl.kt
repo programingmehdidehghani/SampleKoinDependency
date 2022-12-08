@@ -1,7 +1,8 @@
 package com.example.samplekoindependency
 
-class MainRepositoryImpl : MainRepository {
+class MainRepositoryImpl constructor(private val api: MyApi)
+  : MainRepository {
     override fun doNetworkCall() {
-        TODO("Not yet implemented")
+        api.callApi()
     }
 }
