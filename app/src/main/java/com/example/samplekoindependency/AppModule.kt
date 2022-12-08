@@ -1,5 +1,7 @@
 package com.example.samplekoindependency
 
+import androidx.lifecycle.viewmodel.compose.viewModel
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -13,5 +15,11 @@ val appModule = module {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(MyApi::class.java)
+    }
+    single<MainRepository> {
+        MainRepositoryImpl(get())
+    }
+    viewModel {
+        MainViewModel(get())
     }
 }
